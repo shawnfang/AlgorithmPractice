@@ -15,16 +15,12 @@ package nowcoderPrimary;
  */
 
 import java.util.Scanner;
-
 public class CalCube {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         float r = scanner.nextFloat();
         double pi = 3.1415926;
-        double v = 4/3*pi*Math.pow(r,3);
-        System.out.println(4%3);
-        System.out.println(Math.pow(r,3));
+        double v = (float)4/3*pi*Math.pow(r,3);
         System.out.printf("%.3f",v);
     }
-
 }
