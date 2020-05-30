@@ -14,14 +14,15 @@ B
 a
 b
  */
+import java.util.ArrayList;
 import java.util.Scanner;
-
-public class UpperCase {
+public class IsToLowerCase {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String s = scanner.next();
-        String a = "A";
-        System.out.println(a.toLowerCase());
-
+        ArrayList<String> str = new ArrayList<>();
+        while (scanner.hasNext()){
+            String sc = scanner.next().toLowerCase();
+            System.out.println(sc);
+        }
     }
 }
