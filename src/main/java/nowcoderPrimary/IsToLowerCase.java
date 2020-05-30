@@ -19,7 +19,6 @@ import java.util.Scanner;
 public class IsToLowerCase {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<String> str = new ArrayList<>();
         while (scanner.hasNext()){
             String sc = scanner.next().toLowerCase();
             System.out.println(sc);
