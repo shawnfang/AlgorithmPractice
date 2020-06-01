@@ -17,7 +17,6 @@ package nowcoderPrimary;
  */
 
 import java.util.Scanner;
-
 public class CalHexAndOctal {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -26,6 +25,5 @@ public class CalHexAndOctal {
         int oct = Integer.valueOf(num.split(" ")[1].substring(1),8);
         int total = hex+oct;
         System.out.print(total);
-
     }
 }
