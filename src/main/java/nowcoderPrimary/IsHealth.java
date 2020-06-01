@@ -24,7 +24,6 @@ Abnormal
  */
 
 import java.util.Scanner;
-
 public class IsHealth {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
