@@ -1,7 +1,5 @@
 package nowcoderPrimary;
 
-import java.util.Scanner;
-
 /*
 题目描述
 小乐乐获得4个最大数，请帮他编程找到最大的数。
@@ -15,6 +13,9 @@ import java.util.Scanner;
 输出
 8
  */
+
+import java.util.Scanner;
+
 public class BC123 {
     public static void main(String[] args) {
         int temp = 0;
@@ -24,13 +25,17 @@ public class BC123 {
         s[1] = scanner.nextInt();
         s[2] = scanner.nextInt();
         s[3] = scanner.nextInt();
-        for (int i = 0; i < s.length - 1; i++) {
-            if (Integer.compare(s[i], s[i + 1]) == 1) {
-                temp = s[i];
-            } else {
-                temp = s[i + 1];
+        for (int j = 0; j < 6; j++) {
+            for (int i = 0; i < s.length - 1; i++) {
+                if (Integer.compare(s[i], s[i + 1]) == 1) {
+                    continue;
+                } else {
+                    temp = s[i + 1];
+                    s[i+1] = s[i];
+                    s[i] = temp;
+                }
             }
         }
-        System.out.println(temp);
+        System.out.println(s[0]);
     }
 }
