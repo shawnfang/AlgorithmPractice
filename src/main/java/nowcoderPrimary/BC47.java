@@ -19,8 +19,8 @@ A is an alphabet.
 import java.util.Scanner;
 public class BC47 {
     public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
-            while (scanner.hasNext()){
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNext()){
             char ch = scanner.next().charAt(0);
             if (Character.isAlphabetic(ch)) {
                 System.out.printf("%s is an alphabet.\n",ch);
