@@ -15,7 +15,6 @@ package nowcoderPrimary;
 public class BC38 {
     public static void main(String[] args) {
         StringBuffer str = new StringBuffer();
-
         for (int i = 10000;i>=10000 && i<=99999; i++) {
             String s = String.valueOf(i);
             char[] c = s.toCharArray();
@@ -31,7 +30,6 @@ public class BC38 {
                 str.append(i+" ");
             }
         }
-
         System.out.println(str);
     }
 }
