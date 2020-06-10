@@ -26,10 +26,13 @@ KiKi学习了循环，BoBo老师给他出了一系列打印图案的练习，该
 * * * * *
  */
 
+import com.sun.deploy.util.StringUtils;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BC58 {
-    public static void main(String[] args) {
+    public static void mehodOne(){
         Scanner scanner = new Scanner(System.in);
         String string = "*";
         while (scanner.hasNext()) {
@@ -41,5 +44,20 @@ public class BC58 {
                 System.out.print("\n");
             }
         }
+    }
+
+    public static void methodTwo(){
+        String s = "* ";
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNext()) {
+            int num = scanner.nextInt();
+            for (int i = 1; i <= num; i++) {
+                System.out.println(new String(new char[i]).replace("\0", s));
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        BC58.methodTwo();
     }
 }
