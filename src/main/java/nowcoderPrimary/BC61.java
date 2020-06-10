@@ -16,7 +16,6 @@ KiKi学习了循环，BoBo老师给他出了一系列打印图案的练习，该
 * * * *
  */
 import java.util.Scanner;
-
 public class BC61 {
     public static void answerOne(){
         Scanner scanner = new Scanner(System.in);
@@ -33,7 +32,21 @@ public class BC61 {
             }
         }
     }
+
+    public static void answerTwo(){
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNext()) {
+            int n = scanner.nextInt();
+            for (int i = 0; i < n; i++) {
+                for (int j = n; j > i; j--) {
+                    System.out.print("* ");
+                }
+                System.out.println();
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        BC61.answerOne();
+        BC61.answerTwo();
     }
 }
