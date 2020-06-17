@@ -1,10 +1,5 @@
 package nowcoderPrimary;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 /*
 题目描述
@@ -30,6 +25,10 @@ import java.util.Scanner;
 复制
 44.44
  */
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 public class BC79 {
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
@@ -37,34 +36,23 @@ public class BC79 {
             String count = scanner.nextLine();
             int m = Integer.parseInt(count.split(" ")[0]);
             int n = Integer.parseInt(count.split(" ")[1]);
-            int[] totalLine = new int[m*2];
             int[] LineCount = new int[n];
             int counter = 0;
-            for (int i = 0; i <totalLine.length ; i++) {
+            ArrayList<Integer> arrayList = new ArrayList<>();
+            for (int i = 0; i < m*2 ; i++) {
                 String x = scanner.nextLine();
-                for (int j = 0; j < LineCount.length; j++) {
-                    LineCount[j] = Integer.parseInt(x.split(" ")[j]);
+                for (int j = 0; j < n ; j++) {
+                    LineCount[j] =Integer.parseInt(x.split(" ")[j]);
+                    arrayList.add(LineCount[j]);
                 }
             }
-            ArrayList<Integer> sameNum1 = new ArrayList<>();
-            for (int i = totalLine[0]; i <= m ; i++) {
-                for (int j = 0; j < n; j++) {
-                    sameNum1.add(LineCount[j]);
-                }
-            }
-            ArrayList<Integer> sameNum2 = new ArrayList<>();
-            for (int i = totalLine[m+1]; i < m; i++) {
-                for (int j = 0; j < n; j++) {
-                    sameNum2.add(LineCount[j]);
-                }
-            }
-            for (int i = 0; i < sameNum1.size(); i++) {
-                System.out.println(sameNum1.get(i));
-                if (sameNum1.get(i).equals(sameNum2.get(i))) {
+            for (int j = 0; j < arrayList.size()/2; j++) {
+                if (arrayList.get(j).equals(arrayList.get(arrayList.size()/2+j))) {
                     counter++;
                 }
+
             }
-            System.out.println(counter);
+            System.out.printf("%.2f",(float)counter/(m*n)*100);
         }
     }
 }
