@@ -19,39 +19,22 @@ package nowcoderPrimary;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
+import java.util.Set;
+import java.util.TreeSet;
 
-public class BC136 {
-    public static void main(String[] args) throws IOException {
-        StringBuffer stringBuffer = new StringBuffer();
-        StringBuffer stringBuffer2 = new StringBuffer();
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        int num = Integer.parseInt(bufferedReader.readLine());
-        String[] numList = bufferedReader.readLine().split(" ");
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        int temp;
-        for (int i = 0; i < num; i++) {
-            if (!arrayList.contains(Integer.parseInt(numList[i]))) {
-                arrayList.add(Integer.parseInt(numList[i]));
-                stringBuffer.append(numList[i]+" ");
-            }
-        }
-        int[] tempList = new int[stringBuffer.toString().split(" ").length];
-        for (int i = 0; i < tempList.length ; i++) {
-            tempList[i]=Integer.parseInt(stringBuffer.toString().split(" ")[i]);
-        }
-        for (int i = 0; i < tempList.length; i++) {
-            for (int j = 0; j < i ; j++) {
-                if (tempList[j]>tempList[i]) {
-                    temp = tempList[i];
-                    tempList[i] = tempList[j];
-                    tempList[j] = temp;
-                }
-            }
-        }
-        for (int i:tempList){
-            stringBuffer2.append(i+" ");
-        }
-        System.out.println(stringBuffer2);
+public class BC136{
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        br.readLine();
+        String[] s =br.readLine().trim().split(" +");
+        StringBuilder sb = new StringBuilder();
+        Set<Integer> set = new TreeSet<>();
+        for(String str:s)
+            set.add(Integer.parseInt(str));
+
+        for(Integer i:set)
+            sb.append(i+" ");
+        System.out.println(sb.toString().trim());
+
     }
 }
