@@ -16,25 +16,46 @@ package nowcoderPrimary;
 2 3 4 5
  */
 
-import java.io.BufferedReader;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
-public class BC136{
-    public static void main(String[] args)throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        br.readLine();
-        String[] s =br.readLine().trim().split(" +");
-        StringBuilder sb = new StringBuilder();
-        Set<Integer> set = new TreeSet<>();
-        for(String str:s)
-            set.add(Integer.parseInt(str));
-
-        for(Integer i:set)
-            sb.append(i+" ");
-        System.out.println(sb.toString().trim());
-
+public class BC136 {
+    public static void main(String[] args) throws IOException {
+        StringBuffer stringBuffer = new StringBuffer();
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+        scanner.nextLine();
+        String[] numList = scanner.nextLine().split(" ");
+        Set<Integer> set = new HashSet<>();
+        int temp;
+        int count = 0;
+        for (int i = 0; i < numList.length; i++) {
+            set.add(Integer.parseInt(numList[i]));
+        }
+        int[] tempList = new int[set.size()];
+        Iterator it =set.iterator();
+        for (int i = 0; i < set.size(); i++) {
+            while (it.hasNext()){
+                int next = (int) it.next();
+                tempList[i] = next;
+                count++;
+                break;
+            }
+        }
+        for (int i = 0; i < count; i++) {
+            for (int j = 0; j < tempList.length-1; j++) {
+                if (tempList[j] > tempList[j+1]) {
+                    temp = tempList[j+1];
+                    tempList[j+1] = tempList[j];
+                    tempList[j] = temp;
+                }
+            }
+        }
+        for (int i : tempList) {
+            stringBuffer.append(i + " ");
+        }
+        System.out.println(stringBuffer.toString().trim());
     }
 }
+
