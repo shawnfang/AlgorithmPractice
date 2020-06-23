@@ -21,7 +21,6 @@ package nowcoderPrimary;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
 public class BC113 {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader =new BufferedReader(new InputStreamReader(System.in));
@@ -29,16 +28,31 @@ public class BC113 {
         int nowHour = Integer.parseInt(s.split(":")[0]);
         int nowMinute = Integer.parseInt(s.split(":")[1].split(" ")[0]);
         int sleeptime = Integer.parseInt(s.split(" ")[1]);
-        int hour;
-        int minute;
+        int hour = 0;
+        int minute = 0;
         if (sleeptime/60 >= 24) {
-            hour = sleeptime%60%24+nowHour;
-            if (hour>=24) {
-                hour = hour/24;
-            }
-            System.out.println(hour);
+            hour = (sleeptime%(60*24))/60+nowHour;
+            minute = sleeptime%60%60+nowMinute;
+        }else {
+            hour = sleeptime/60+nowHour;
+            minute = sleeptime%60+nowMinute;
         }
-
+        if (hour>=24) {
+            hour = hour%24;
+        }
+        if (minute/60 >= 1) {
+            hour = minute/60+hour;
+            minute = minute%60;
+        }
+        String minutes = String.valueOf(minute);
+        String hours = String.valueOf(hour);
+        if (hour < 10) {
+            hours = "0"+String.valueOf(hour);
+        }
+        if (minute < 10) {
+            minutes = "0"+String.valueOf(minutes);
+        }
+        System.out.println(hours+":"+minutes);
 
     }
 }
