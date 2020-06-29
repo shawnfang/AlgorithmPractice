@@ -40,5 +40,4 @@ public class BC112 {
         }
         return sum;
     }
-
 }
