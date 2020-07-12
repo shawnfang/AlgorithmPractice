@@ -32,12 +32,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 public class ArrSort {
-    public static void sortArrary(String[] strings,int n){
-        for (int i = 0; i < n; i++) {
-            for (int j = i+1; j < n; j++) {
-                if (Integer.parseInt(strings[i]) > Integer.parseInt(strings[j]) ) {
-                    swap(strings,i,j);
-                }
+    public static void sortArrary(String[] strings,int n,int first){
+        for (int i = 0; i < n-1; i++) {
+            sortArrary(strings,n-1,first+1);
+            if (Integer.parseInt(strings[first]) > Integer.parseInt(strings[first+1]) ) {
+                swap(strings,first,first+1);
             }
         }
     }
@@ -53,11 +52,11 @@ public class ArrSort {
         String[] s;
         int num = Integer.parseInt(bufferedReader.readLine());
         s = bufferedReader.readLine().split(" ");
-        int temp = 0;
-        sortArrary(s,num);
-        for (String s1:s){
-            stringBuffer.append(s1+" ");
+        sortArrary(s,num,0);
+        StringBuilder res=new StringBuilder();
+        for(int i=0;i<num;i++){
+            res.append(Integer.parseInt(s[i])).append(" ");
         }
-        System.out.println(stringBuffer);
+        System.out.println(res);
     }
 }
