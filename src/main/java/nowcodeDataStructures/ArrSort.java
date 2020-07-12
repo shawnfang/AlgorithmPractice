@@ -1,4 +1,8 @@
 package nowcodeDataStructures;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 /*
 题目描述
 给定一个数组arr，其中只可能含有0、1、2三个值，请实现arr的排序
@@ -23,8 +27,37 @@ package nowcodeDataStructures;
 
 保证arr_i=0/1/2
  */
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 public class ArrSort {
-    public static void main(String[] args) {
-        
+    public static void sortArrary(String[] strings,int n){
+        for (int i = 0; i < n; i++) {
+            for (int j = i+1; j < n; j++) {
+                if (Integer.parseInt(strings[i]) > Integer.parseInt(strings[j]) ) {
+                    swap(strings,i,j);
+                }
+            }
+        }
+    }
+    public static void swap(String[] sArrary,int first,int second){
+        int temp;
+        temp = Integer.parseInt(sArrary[first]);
+        sArrary[first] =sArrary[second];
+        sArrary[second] = String.valueOf(temp);
+    }
+    public static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    public static void main(String[] args) throws IOException {
+        StringBuffer stringBuffer = new StringBuffer();
+        String[] s;
+        int num = Integer.parseInt(bufferedReader.readLine());
+        s = bufferedReader.readLine().split(" ");
+        int temp = 0;
+        sortArrary(s,num);
+        for (String s1:s){
+            stringBuffer.append(s1+" ");
+        }
+        System.out.println(stringBuffer);
     }
 }
