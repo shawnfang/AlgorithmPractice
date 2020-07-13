@@ -14,16 +14,7 @@ public class PrintMinNumber {
         TreeSet<String> treeSet = new TreeSet<>();
         StringBuffer stringBuffer = new StringBuffer();
         for (int i = 0; i < numbers.length; i++) {
-            for (int j = 0; j <= i ; j++) {
-                swap(numbers,j,i);
-                for (int ints: numbers) {
-                    stringBuffer.append(ints);
-                }
-                System.out.println("test1");
-                System.out.println(stringBuffer.toString());
-                treeSet.add(stringBuffer.toString());
-                stringBuffer.delete(0,stringBuffer.length());
-            }
+            
         }
         System.out.println("测试");
         System.out.println(treeSet.first());
