@@ -39,10 +39,10 @@ public class RussiaGame {
         int temp;
         String[] strings1 = bufferedReader.readLine().split(" ");
         for (int i = 0; i < m; i++) {
-            arr[Integer.parseInt(strings1[i])-1]++;
+            arr[Integer.parseInt(strings1[i]) - 1]++;
         }
         for (int i = 0; i < n; i++) {
-            for (int j = i+1; j < n; j++) {
+            for (int j = i + 1; j < n; j++) {
                 if (arr[i] > arr[j]) {
                     temp = arr[j];
                     arr[j] = arr[i];
@@ -52,8 +52,4 @@ public class RussiaGame {
         }
         System.out.println(arr[0]);
     }
-<<<<<<< Updated upstream
 }
-=======
-}
->>>>>>> Stashed changes
