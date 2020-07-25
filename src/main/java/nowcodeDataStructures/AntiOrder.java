@@ -25,7 +25,7 @@ public class AntiOrder {
 
     public static void main(String[] args) {
         AntiOrder antiOrder = new AntiOrder();
-        int[] a = {1,2,3,4,5,6,7,0};
+        int[] a = {4,2,6,4,5,4,7,0};
         System.out.println(antiOrder.count(a,8));
     }
 }
